@@ -12,7 +12,7 @@ RUN mvn dependency:go-offline
 COPY . .
 
 # Build the application
-RUN mvn clean package -DskipTests
+RUN mvn clean package
 
 # Second stage: Run the application
 FROM eclipse-temurin:17-jdk-alpine
