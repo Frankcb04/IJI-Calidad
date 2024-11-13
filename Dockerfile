@@ -1,5 +1,5 @@
 # First stage: Build the application
-FROM maven:3.8.5-openjdk-17-slim AS build
+FROM maven:3.9.4-eclipse-temurin-21 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 RUN mvn clean package
 
 # Second stage: Run the application
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 # Establecer el directorio de trabajo
 WORKDIR /app
